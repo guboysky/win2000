@@ -1,10 +1,8 @@
 
 
-# 主题效果
+### 主题效果
 
 <img width="2099" height="1919" alt="xp" src="https://github.com/user-attachments/assets/a462edac-1c8b-4882-a22e-e9eded56ed34" />
-
-<img width="2099" height="1589" alt="win3 11" src="https://github.com/user-attachments/assets/d25b1aae-c85a-4d08-af0c-2722832c5736" />
 
 <img width="2109" height="1903" alt="win2000" src="https://github.com/user-attachments/assets/1f820713-c274-47e2-b69d-19e587616f9c" />
 
