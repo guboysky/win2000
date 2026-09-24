@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" />
+    <title>服务器监控</title>
+    <script type="module" crossorigin src="/assets/index-kMSAv5u5.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-VgOtNSeE.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Before first paint, so a reader on the classic scheme does not get one
+      // dark frame while React mounts. The stylesheet carries the classic scheme
+      // on `body.light` and the dark one on its absence, so the class is added
+      // here rather than a variable written: this script sits below `#root`
+      // because `body` does not exist yet in the head.
+      try {
+        var choice = JSON.parse(localStorage.getItem("serverstatus:w2k-theme") || '"light"')
+        var dark = choice === "dark" || (choice === "auto" && matchMedia("(prefers-color-scheme: dark)").matches)
+        if (!dark) document.body.classList.add("light")
+      } catch (e) {
+        document.body.classList.add("light")
+      }
+      // The system, on the same terms: a skin is a set of colours and corners, so
+      // a page that painted as Windows 2000 and then became Aqua would flash its
+      // whole layout, not just its palette. An unknown value is left off, and
+      // Windows 2000 is what the stylesheet does with no attribute at all.
+      try {
+        var skin = JSON.parse(localStorage.getItem("serverstatus:w2k-skin") || "null")
+        if (["win31", "win2000", "xp", "aqua"].indexOf(skin) >= 0) document.body.dataset.skin = skin
+      } catch (e) { /* the default stands */ }
+    </script>
+  </body>
+</html>
